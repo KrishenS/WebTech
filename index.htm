@@ -10,13 +10,21 @@
 	/* Your styles go here */
 	</style>
 	
-	<script type="text/javascript">
-	/* Your JavaScript goes here */
-	</script>
+	<script>
+
+		function ChgStyle()
+		{
+		 document.getElementById("myh1").style.color="red";
+		 document.getElementById("myh1").style.font="30pt 'Comic Sans MS'";
+		 document.getElementById("myh1").style.textAlign="center";
+		} 
+ 
+	  
+	 </script>
   </head>
 
   <body>
-	<h1>Table of Contents</h1>
+	<h1 id="myh1" onclick="ChgStyle()">Table of Contents</h1>
 	<p>In-class activities</p>
 	<ul>
 	<li><a href="session3/index.htm">Session 3</a></li>

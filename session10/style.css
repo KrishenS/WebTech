@@ -1,0 +1,5 @@
+@font-face {font-family: myfont; src:url(BabyNasha-Wym7z.ttf)}
+p{color: darkgray;font-family:'Times New Roman', Times, serif ;text-align: left;margin-left: 50px;padding-top: 15px;}
+h2{border-style: ridge;}
+a{border-style: double;}
+span{margin-top: 50px;}

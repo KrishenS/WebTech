@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Krishen</title>
+    <link rel = "stylesheet" href= "style.css" type = "text/css" />
+    <script>
+
+		function ChgStyle()
+		{
+		 document.getElementById("myh1").style.color="green";
+		 document.getElementById("myh1").style.font="30pt 'Comic Sans MS'";
+		 document.getElementById("myh1").style.textAlign="center";
+		} 
+        function ChgImg()
+        {alert(1);
+            document.getElementById("i1").scr="bangalore.jpg";
+        }
+        function ChgBack()
+        {
+            document.getElementById("i1").src="pictureofme.jpg";
+        }
+	  
+	 </script>
+</head>
+
+<body style = "background-color: chocolate;">
+    <img id = "i1"  src = "pictureofme.jpg"alt="Picture of Me" width = 400 height = 400 onmouseover= "ChgImg" onmouseout= "ChgBack">
+    <h1 style = "font-family: myfont;" id="myh1" onclick="ChgStyle()">All About Krishen</h1>
+    <hr>
+    <p><span>Im From Livingston, NJ and <b>you can best contact me at kseth2@babson.edu</b></span></p>
+    <hr>
+    <p style = "font-family: 'Times New Roman', Times, serif;"><i>I have experience coding in Java and Javascript <br> I also have experience in working with SQL</i></p>
+    <p style = "font-family: myfont; color: black;">Some other interesting facts about me!</p>
+   
+    <ul title="Fun Facts">
+          
+         <li>I am of Indian Heritage
+            <ul>
+                <li>My mother is from Lucknow</li>
+                <li>My father is from Bangalore</li>
+             </ul>
+            </li>
+         <li>I have experience building computers</li>
+         <li>I recently also started learning python</li>
+        
+    </ul>
+ 
+
+ 
+   
+    <a href= "interests.htm"> My Interests </a>
+    <map name = "newmap">
+        <area shape = "rect" coords = "35,50,75,240" href= "interests.htm" alt = "Interests" >
+        <area shape = "circle" coords = "210,230,44" href = "https://www.linkedin.com/in/krishen-seth-890402169/" alt = "linkedin">
+    </map>
+<hr>
+</body>
+</html>
