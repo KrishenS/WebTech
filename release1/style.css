@@ -1,0 +1,8 @@
+@font-face {font-family:mhello; src:url(HelloJones.ttf)}
+@font-face {font-family:redact; src:url(PaintDropsRegular-0WaJo.ttf)}
+@font-face {font-family: menitem; src:url(ComicoolBookRegular-yeLe.ttf)}
+@font-face {font-family: songfont; src:url(Back\ to\ School.ttf)}
+@font-face {font-family: cutefont; src:url(Cute\ Cartoon\ Italic.ttf)}
+span {font-family: redact; color: red; font-size: 18px;}
+h2 {margin-bottom: 20px;}
+h1{text-align: center; color: azure; font-family: mhello; font-size: 60px;}
