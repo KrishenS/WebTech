@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MIS3690 Survey</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<style>
+	td {padding-right:40px; text-align: justify; padding-top: 10px;}
+	</style>
+	<script>
+		function validate(){
+			var jscss = document.getElementById("3")
+			var jstab = document.getElementById("4")
+			var jsform = document.getElementById("5")
+			var jsimg = document.getElementById("6")
+			if (document.getElementById("1").value == "") 
+			{
+				alert("First name required");
+				document.getElementById("1").focus();
+			}
+			else if (document.getElementById("2").value == "")
+			{
+				alert("Last name required");
+				document.getElementById("2").focus();
+			}
+			else if (jscss.checked == false && jstab.checked == false && jsform.checked == false && jsimg.checked == false)
+			{
+				alert("Gender is Required");
+			}
+			else if (document.getElementById("7").value < 2021 || document.getElementById("7").value > 2024)
+			{
+				alert("please enter a valid graduation year")
+				document.getElementById("7").focus()
+
+			}
+			else
+			{
+				return true;
+			}
+			return false
+			}
+				
+		
+	</script>
+	
+</head>
+<body>
+	<form action="http://wtspring13sec2.babson.edu/gordon/mailer.php" onsubmit="return validate()">
+	<h1>MIS3690 Student Survey</h1>	
+	<p>Please complete the following survey.  You must answer each question.  When you are done,
+	    please click on the Submit button.</p>
+	<table>
+	<tr><td>First Name:<input type = "text" id = "1"></td><td>Last Name:<input type = "text" id = "2"></td></tr>
+	<tr><td>Gender: Male<input type = "radio" name = "gender" value = "male"> Female <input type = "radio" name = "gender" value = "female"> </td><td>&nbsp;</td></tr>
+	<tr><td>What grade do you expect to recieve? <select name = "grade"> 
+		<option value = "A">A</option>
+		<option value = "B">B</option>
+		<option value = "C">C</option>
+		<option value = "D">D</option>
+		<option value = "F">F</option></select>
+	</td><td>&nbsp;</td></tr>
+	</table>
+		<table>
+			<tr><td rowspan="4">Which topics did you find to be fun?</td><td><input type = "checkbox" name = "I" value = "Image" id="6"/>Images</td></tr>
+			<tr><td><input type = "checkbox" name = "C" value = "CSS" id="3"/>CSS</td></tr>
+			<tr><td><input type = "checkbox" name = "T" value = "Tables" id="4" />Tables</td></tr>
+			<tr><td><input type = "checkbox" name = "F" value = "Forms" id="5"/>Forms</td></tr>
+		</table>
+		<p>Year of Graduation</p>
+		<input type="text" id = "7">
+	<p>Please add any comments that you have</p><br/>
+	<textarea style = "width: 250px" name="comments"></textarea>
+	<table>
+		<tr><td><button>Submit</button></td><td><button>Reset</button></td></tr>
+	</table>
+	
+		</form>
+</body>
+</html>
