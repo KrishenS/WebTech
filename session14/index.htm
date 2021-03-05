@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seesion 14</title>
+    <script>
+        function ChgPge(){
+            var name = Math.floor(Math.random()* 5)
+            var die1 = Math.floor(1+Math.random()*500)+"px"
+            var die2 = Math.floor(1+Math.random()*500)+"px"
+            var names = new Array("Click Me", "Move Me", "Click Here","Button", "Next")
+            document.getElementById("d1").style.top = die1
+            document.getElementById("d1").style.left = die2
+            document.getElementById("d1").innerHTML= names[name]
+            
+
+        }
+
+    </script>
+    <style>
+        button {position:absolute; top:0px; left:0px}
+    </style>
+</head>
+<body>
+    <button onclick="ChgPge()" id="d1">Click Here</button>
+</body>
+</html>
