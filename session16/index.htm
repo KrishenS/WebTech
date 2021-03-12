@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 16</title>
+    <!-- clicking the canvas stops the animation, and clicking the h1 restarts the animation -->
+    <style>
+        canvas{border-style: double;}
+    </style>
+    <script>
+        var d =true
+        var ctx;
+        var timer = null
+        function startAnimation(){
+            if (!timer) timer = setInterval(drawShape, 1000)
+        }
+   
+         function stopAnimation(){
+          if (!timer) return false;  
+          clearInterval(timer);  
+          timer = null;
+        }
+    
+        function drawShape(){
+            var canvas = document.getElementById("canvas")
+            ctx = canvas.getContext('2d');
+            colorList = new Array("yellow", "blue", "red", "green", "orange", "purple")
+            canvasAnimate();
+        }
+        function canvasAnimate()
+        {
+            if (d==true)
+                {
+                    ctx.fillStyle=colorList[Math.floor(Math.random()*colorList.length)]
+                    rand1=Math.floor(Math.random()*1500);
+                    rand2=Math.floor(Math.random()*450);
+                   ctx.fillRect(rand1,rand2,50,50);
+                    d=false;
+                }
+            else
+                {
+                    rand1=Math.floor(Math.random()*1500)
+                    rand2=Math.floor(Math.random()*450)
+                    ctx.clearRect(rand1,rand2,50,50)
+                    d=true;
+                }
+            
+		}
+    </script>
+</head>
+<body onload="startAnimation()">
+    <h1 onclick="startAnimation()">Box Animation</h1>
+    <canvas id="canvas" width="1500" height="500" onmousedown="stopAnimation()"></canvas>
+</body>
+</html>
