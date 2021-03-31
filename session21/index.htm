@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Krishen</title>
+    <link rel = "stylesheet" href= "style.css" type = "text/css" />
+    <style>
+        .myclass{font-size: 20pt; text-align:right; color: red}
+    </style>    
+</head>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(function(){
+    $("#title").click(function(){
+        $("#slide").slideToggle("slow")
+    })
+    $("#contact").click(function(){
+        $("#contact").text("or sethkrishen@gmail.com")
+    })
+    $("#pre").click(function(){
+        $("#text").prepend("<h2>Bio</h2>")
+    })
+    $("#pic").click(function(){
+        $("#pic").remove();
+    })
+    $("#classic").click(function(){
+        $("#classic").addClass("myclass")
+    })
+    $("#span").click(function(){
+        $("#span").delay(1000)
+        $("#span").animate({ padding :'10px', fontSize: '10pt'})
+        
+    })
+
+})
+
+
+/* Your additional JavaScript goes here */
+</script>
+
+<body style = "background-color: chocolate;">
+    <img src="pictureofme.jpg" alt="Picture of Me" style="border-style: double;" id="pic" >
+    <span><h1 id="title">All About Krishen</h1></span>
+    <h2 id="slide">Aka Me</h2>
+    <hr>
+    <p id="text"><span id="pre">Im From Livingston, NJ</span> and <b>you can best <span id="span">contact </span>me at <span id="contact">kseth2@babson.edu</span></b></p>
+    <hr>
+    <p style = "font-family: 'Times New Roman', Times, serif;" id="classic"><i>I have experience coding in Java and Javascript <br> I also have experience in working with SQL</i></p>
+
+    <a href= "interests.htm"> My Interests </a>
+<hr>
+</body>
+</html>
