@@ -16,15 +16,45 @@
      
         
     </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+    $(function(){
+    $("#hh").click(function(){
+        $("#hh").delay(1000)
+        $("#hh").animate({ padding :'10px', fontSize: '10pt'})
+    })
+
+})
+        
+        var i = 0
+         var timer = null
+            function startAnimation(){
+                if(!timer) timer = setInterval(ChgImg, 3000)
+            }
+            function ChgImg(){
+                var myimg= document.getElementById("a1")
+                var images = ["ether.jpg", "Box.jpg", "keys.jpg"]
+                myimg.src = images[i]
+                i = (i + 1) % images.length;
+        }
+        function ChgTxt(){
+                var colors = ["red", "white", "black"]
+                var i = [Math.floor(Math.random()*colors.length)]
+                var mytxt= document.getElementById("a2")
+               
+                mytxt.style.color = colors[i]
+        }
+           
+    </script>
 </head>
-<body>
-    <h1>About Us</h1>
+<body onload="startAnimation(); ChgTxt();">
+    <h1 id="hh">About Us</h1>
     <h2><a href="index.htm">Home</a> &nbsp; <a href="music.htm">Music</a> &nbsp; <a href="merch.htm">Merch</a> &nbsp; <a href="blog.htm">Videos</a> &nbsp; <a href="contact.htm">Contact</a></h2>
 
-    <h3 style="padding-top: 65px;">Unprofessional began out of a very unprofessional desire to create music attuned to the unprofessional ear.  We aim to provide all of our listeners the same consistently mediocre listening experience that can only be accomplished by absolute amateurs.  Unprofessionalism, for us, is the peak of creativity, the epitome of freedom for expression.  WE can't compromise on our raw vision and we aim to show our listeners that you shouldn't either</h3>
+    <h3 style="padding-top: 65px;" id="a2">Unprofessional began out of a very unprofessional desire to create music attuned to the unprofessional ear.  We aim to provide all of our listeners the same consistently mediocre listening experience that can only be accomplished by absolute amateurs.  Unprofessionalism, for us, is the peak of creativity, the epitome of freedom for expression.  WE can't compromise on our raw vision and we aim to show our listeners that you shouldn't either</h3>
     <h3 style="padding-bottom: 100px;">Click on the links below to see our music, merch, or blog!</h3>
     <table>
-        <tr><td><a href="latest.htm"><img src="Box.jpg" alt="latest album"></a></td><td><a href="merch.htm"><img src = "images/merch5.png" alt="merch"></a></td><td><a href="blog.htm"><img src="blog.jpg" alt = "videos"></a></td></tr>
+        <tr><td><a href="latest.htm"><img src="Box.jpg" alt="latest album" id="a1"></a></td><td><a href="merch.htm"><img src = "images/merch5.png" alt="merch"></a></td><td><a href="blog.htm"><img src="blog.jpg" alt = "videos"></a></td></tr>
     </table>
 </body>
 </html>

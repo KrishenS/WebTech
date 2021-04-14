@@ -16,22 +16,50 @@
         td{font-size: 20px; font-family:fantasy;color: black; padding-top: 15px;}
         audio::-webkit-media-controls-panel{background-color:blanchedalmond ;}
         body{background-image: url("keys.jpg");}
-        
+        .rotate{-webkit-transform: rotate(360deg);-webkit-transition: -webkit-transform 1s}
     </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#img1").click(function(){
+        $("#img1").remove();
+    })
+})
+     function onlyone(){
+        document.addEventListener('play', function(e){
+             var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                 if(audios[i] != e.target){
+                 audios[i].pause();
+                }
+            }
+          }, true);
+      }
+      function rotate(){
+            for(var i=1;i<11;i++) {
+                (function (local_i) {
+                setTimeout(function(){
+                    document.getElementById("img1").classList.add('rotate');
+                }, 100 * local_i);
+                })(i);
+            }
+    }
+        
+</script>
 </head>
-<body>
+<body onload="rotate()">
     <h1 style="color: grey;">Albums</h1>
     <h2><a href="index.htm">Home</a> &nbsp; <a href="about.htm">About Us</a>&nbsp; <a href="music.htm">Music</a> &nbsp; <a href="merch.htm">Merch</a> &nbsp; <a href="blog.htm">Videos</a> &nbsp; <a href="contact.htm">Contact</a> </h2>
-    <img src="keys.jpg" class="center" alt="keys" usemap="#newmap">
+    <img src="keys.jpg" class="center" alt="keys" usemap="#newmap" id="img1">
     <div style="background-color: blanchedalmond;">
     <table style="padding-top: 75px;">
-        <tr><td>Free</td><td style="padding-left: 150px;"><audio src="songs/20.mp3" controls></audio></td></tr>
-        <tr><td>YES</td><td style="padding-left: 150px;"><audio src="songs/untitled28.mp3" controls></audio></td></tr>
-        <tr><td>Summer</td><td style="padding-left: 150px;"><audio src="songs/untitled33.mp3" controls></audio></td></tr>
-        <tr><td>Winter</td><td style="padding-left: 150px;"><audio src="songs/untitled36.mp3" controls></audio></td></tr>
-        <tr><td>Sitarian</td><td style="padding-left: 150px;"><audio src="songs/Project42.mp3" controls></audio></td></tr>
-        <tr><td>Why</td><td style="padding-left: 150px;"><audio src="songs/untitled7.mp3" controls></audio></td></tr>
-        <tr><td>Fin</td><td style="padding-left: 150px;"><audio src="songs/untitled8.mp3" controls></audio></td></tr>
+        <tr><td>Free</td><td style="padding-left: 150px;"><audio src="songs/20.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>YES</td><td style="padding-left: 150px;"><audio src="songs/untitled28.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>Summer</td><td style="padding-left: 150px;"><audio src="songs/untitled33.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>Winter</td><td style="padding-left: 150px;"><audio src="songs/untitled36.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>Sitarian</td><td style="padding-left: 150px;"><audio src="songs/Project42.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>Why</td><td style="padding-left: 150px;"><audio src="songs/untitled7.mp3" controls onplay="onlyone();"></audio></td></tr>
+        <tr><td>Fin</td><td style="padding-left: 150px;"><audio src="songs/untitled8.mp3" controls onplay="onlyone();"></audio></td></tr>
     </table>
 </div>
 <map name = "newmap">

@@ -13,9 +13,21 @@
         table{margin-left: auto; margin-right: auto;}
         img:hover{opacity: 0.5;}
     </style>
+<script>
+function ChgTitle(){
+    if (document.getElementById("a1").innerHTML = "Merch & Swag"){
+        document.getElementById("a1").innerHTML = "Swag & Merch"
+    }
+}
+function ChgBack(){
+    if(document.getElementById("a1").innerHTML = "Swag & Merch"){
+        document.getElementById("a1").innerHTML = "Merch & Swag"
+    }
+}
+</script>
 </head>
 <body>
-    <h1 style="color: black;">Merch & Swag</h1>
+    <h1 style="color: black;" id="a1" onmouseover="ChgTitle();" onmouseout="ChgBack();">Merch & Swag</h1>
     <h2><a href="index.htm">Home</a> &nbsp; <a href="about.htm">About Us</a> &nbsp; <a href="music.htm">Music</a> &nbsp; <a href="blog.htm">Videos</a> &nbsp; <a href="contact.htm">Contact</a></h2>
     <table>
         <tr><td><a href="products/fanny.htm"><img src="images/merch1.png" alt="fanny"></a></td><td><a href="products/mask.htm"><img src="images/merch2.png" alt="mask"></a></td><td><a href="products/hoodie.htm"><img src="images/merch5.png" alt="hoodie"></a></td></tr>

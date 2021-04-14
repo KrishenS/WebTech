@@ -15,19 +15,56 @@
     p{font-family: 'Times New Roman', Times, serif;font-size: 14px;color: white;}
     body{background-image:url("images/If\ you\ dream\ it\,\ you\ can\ do\ it.png");}
 </style>
+<script>
+        
+    function validate(){
+        var uh = document.getElementById("e")
+        var ub = document.getElementById("f")
+        var uf = document.getElementById("g")
+        var bm = document.getElementById("h")
+        var ba = document.getElementById("d")
+        var ka = document.getElementById("i")
+        var ea = document.getElementById("j")
+        if (document.getElementById("a").value == ""){
+            alert("Please enter your First Name.");
+            document.getElementById("a").focus();
+        }
+        else if (document.getElementById("b").value == ""){
+            alert("Please enter your Last Name.");
+            document.getElementById("b").focus();
+        }
+        else if (document.getElementById("c").value == ""){
+            alert("Please enter your email address");
+            document.getElementById("c").focus();
+        }
+        else if (uh.checked == false && ub.checked == false && uf.checked == false && bm.checked == false && ba.checked == false && ka.checked == false && ea.checked == false){
+            alert("Please select one of the products that you would be interested in");
+        }
+        else
+		{
+			return true;
+		}
+		return false
+	}
+				
+</script>
 </head>
 <body>
     <h1>Contact Form</h1>
     <h2><a href="music.htm">Music</a> &nbsp; <a href="merch.htm">Merch</a> &nbsp; <a href="index.htm">Home</a> &nbsp; <a href="about.htm">About Us</a> &nbsp; <a href="blog.htm">Videos</a></h2>
-   <form action="http://wtspring13sec2.babson.edu/gordon/mailer.php">
+   <form action="http://wtspring13sec2.babson.edu/gordon/mailer.php" onsubmit="return validate()">
        <fieldset><legend style="color: white;">Listener Information</legend>
-        <p>First Name: <input type="text" name="firstname" tabindex="1">  Last Name: <input type="text" name="lastname" tabindex="2"></p>
-        <p>Email Address: <input type="text" name="email" tabindex="3"></p>
+        <p>First Name: <input type="text" name="firstname" tabindex="1" id="a">  Last Name: <input type="text" name="lastname" tabindex="2" id="b"></p>
+        <p>Email Address: <input type="text" name="email" tabindex="3" id="c"></p>
         <p>If any, please select the pieces of merch that interest you. (Select all that apply)<br>
-            <input type="checkbox" name="h" value="hoodie">UnproHoodie<br>
-            <input type="checkbox" name="b" value="bottle">UnproBottle<br>
-            <input type="checkbox" name="f" value="fanny">UnproFanny<br>
-            <input type="checkbox" name="m" value="mask">BoxMask<br>
+            <input type="checkbox" name="h" value="hoodie" id="e">UnproHoodie<br>
+            <input type="checkbox" name="b" value="bottle" id="f">UnproBottle<br>
+            <input type="checkbox" name="f" value="fanny" id="g">UnproFanny<br>
+            <input type="checkbox" name="m" value="mask" id="h">BoxMask<br>
+            <input type="checkbox" name = "l" value = "album1" id = "d"> Box Album<br>
+            <input type="checkbox" name = "k" value = "album2" id = "i"> Keys Album<br>
+            <input type="checkbox" name = "e" value = "album3" id = "j"> Ether Album<br>
+
             Please select the state that you live in:
             <select>
                 <option value="AL">Alabama</option>

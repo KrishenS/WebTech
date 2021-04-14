@@ -16,21 +16,53 @@
         td{font-size:15px; font-family: songfont ;color: black; padding-top: 15px;;}
         audio::-webkit-media-controls-panel{background-color: #2B2929;}
         body{background-image: url("Box.jpg");}
+        .rotate{-webkit-transform: rotate(360deg);-webkit-transition: -webkit-transform 1s}
         
     </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $("#img1").click(function(){
+        $("#img1").remove();
+    })
+})
+    var angle = 0
+      function onlyone(){
+        document.addEventListener('play', function(e){
+             var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                 if(audios[i] != e.target){
+                 audios[i].pause();
+                }
+            }
+          }, true);
+      }
+
+        function rotate(){
+            for(var i=1;i<11;i++) {
+                (function (local_i) {
+                setTimeout(function(){
+                    document.getElementById("img1").classList.add('rotate');
+                }, 100 * local_i);
+                })(i);
+            }
+    }
+    
+        
+    </script>
 </head>
-<body>
+<body onload="rotate()">
     <h1 style="color: black;">Albums</h1>
     <h2><a href="index.htm">Home</a> &nbsp; <a href="about.htm">About Us</a>&nbsp; <a href="music.htm">Music</a> &nbsp; <a href="merch.htm">Merch</a> &nbsp; <a href="blog.htm">Videos</a> &nbsp; <a href="contact.htm">Contact</a> </h2>
-    <img src="Box.jpg" class="center" alt="box">
+    <img src="Box.jpg" class="center" alt="box" id="img1">
     <table style="padding-top: 75px;">
-        <tr><td>TRAPPED</td><td style="padding-left: 150px;"><audio src="songs/untitled24.mp3" controls></audio></td></tr>
-        <tr><td>WHALE SONG</td><td style="padding-left: 150px;"><audio src="songs/untitled64v2.mp3" controls></audio></td></tr>
-        <tr><td>INLAND</td><td style="padding-left: 150px;"><audio src="songs/untitled63.mp3" controls></audio></td></tr>
-        <tr><td>OVRERSEAS</td><td style="padding-left: 150px;"><audio src="songs/untitled57.mp3" controls></audio></td></tr>
-        <tr><td>LUNA</td><td style="padding-left: 150px;"><audio src="songs/untitled58.mp3" controls></audio></td></tr>
-        <tr><td>PIANO BAR</td><td style="padding-left: 150px;"><audio src="songs/untitled61v2.mp3" controls></audio></td></tr>
-        <tr><td>BOUNCE</td><td style="padding-left: 150px;"><audio src="songs/untitled54.mp3" controls></audio></td></tr>
+        <tr><td>TRAPPED</td><td style="padding-left: 150px;"><audio src="songs/untitled24.mp3" controls id="a1" onplay="onlyone();"></audio></td></tr>
+        <tr><td>WHALE SONG</td><td style="padding-left: 150px;"><audio src="songs/untitled64v2.mp3" controls id="a2" onplay="onlyone();"></audio></td></tr>
+        <tr><td>INLAND</td><td style="padding-left: 150px;"><audio src="songs/untitled63.mp3" controls id="a3"onplay="onlyone();"></audio></td></tr>
+        <tr><td>OVRERSEAS</td><td style="padding-left: 150px;"><audio src="songs/untitled57.mp3" controls id="a4"onplay="onlyone();"></audio></td></tr>
+        <tr><td>LUNA</td><td style="padding-left: 150px;"><audio src="songs/untitled58.mp3" controls id="a4"onplay="onlyone();"></audio></td></tr>
+        <tr><td>PIANO BAR</td><td style="padding-left: 150px;"><audio src="songs/untitled61v2.mp3" controls id="a5"onplay="onlyone();"></audio></td></tr>
+        <tr><td>BOUNCE</td><td style="padding-left: 150px;"><audio src="songs/untitled54.mp3" controls id="a6"onplay="onlyone();"></audio></td></tr>
     </table>
 </body>
 </html>
